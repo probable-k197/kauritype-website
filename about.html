@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - KauriType</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --grey-900: #0a0a0a;
+            --grey-800: #1a1a1a;
+            --grey-700: #2a2a2a;
+            --grey-300: #d4d4d4;
+            --grey-200: #e5e5e5;
+            --grey-100: #f5f5f5;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--grey-200);
+            background-color: var(--grey-900);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Instrument Serif', serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.5rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.75rem;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--grey-300);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--white);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-wrapper {
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* About Section */
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--white);
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--grey-200);
+        }
+
+        /* Animated graphic */
+        .graphic-container {
+            position: absolute;
+            top: 50%;
+            right: -10%;
+            transform: translateY(-50%);
+            width: 600px;
+            height: 600px;
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        .geometric-shape {
+            position: absolute;
+            border: 1px solid var(--white);
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            top: 0;
+            left: 0;
+            animation: rotate-slow 40s linear infinite;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            top: 150px;
+            left: 150px;
+            border-radius: 50%;
+            animation: rotate-reverse 30s linear infinite;
+        }
+
+        .shape-3 {
+            width: 250px;
+            height: 250px;
+            top: 100px;
+            left: 200px;
+            transform: rotate(45deg);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes rotate-reverse {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: rotate(45deg) translateY(0); }
+            50% { transform: rotate(45deg) translateY(-30px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            h2 {
+                font-size: 2.2rem;
+            }
+
+            .graphic-container {
+                width: 400px;
+                height: 400px;
+                right: -20%;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .graphic-container {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">KauriType</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section>
+            <div class="graphic-container">
+                <div class="geometric-shape shape-1"></div>
+                <div class="geometric-shape shape-2"></div>
+                <div class="geometric-shape shape-3"></div>
+            </div>
+            <div class="content-wrapper">
+                <h2>Built for builders</h2>
+                <p>KauriType exists because great ideas deserve great execution.</p>
+                <p>We work with startups and scaleups navigating the scrappy early days through the messy middle. We thrive in ambiguous environments, when teams know things could be better but can't always say what. Our focus is building the operational engine that transforms founder-led scrappiness into scaleable excellence, without slowing you down, and whilst protecting your culture.</p>
+                <p>Our approach is practical, not prescriptive. We don't bring off the shelf solutions from other companies. We bring frameworks, pattern recognition, and a bias toward what actually works. Every engagement is shaped around your context, your constraints, your goals, and building your team.</p>
+                <p>What we help with: Operational strategy and planning, process design and optimisation, organisational structure and scaling, operating rhythms and enablement, systems implementation and integration, cross-functional coordination and workflow design.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
